@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开云 · 一点说明与指引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f2f5;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            padding: 2rem 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 820px;
+            width: 100%;
+        }
+
+        /* 卡片风格 */
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e6e9ed;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        /* 顶部 intro */
+        .hero-wrapper {
+            margin-bottom: 2.2rem;
+            border-bottom: 1px solid #dfe3e8;
+            padding-bottom: 1.2rem;
+        }
+
+        .site-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #8993a4;
+            margin-bottom: 0.25rem;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1f2a3a;
+            line-height: 1.2;
+            margin: 0.5rem 0 0.4rem;
+        }
+
+        .byline {
+            color: #5d6b7e;
+            font-size: 1rem;
+            border-left: 3px solid #bdc3cb;
+            padding-left: 1rem;
+            margin: 0.8rem 0 0.2rem;
+            font-style: normal;
+        }
+
+        /* 正文区域 */
+        .article-section p {
+            margin-bottom: 1.4rem;
+            font-size: 1rem;
+        }
+
+        .article-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .pull-quote {
+            background: #f7f9fb;
+            border-left: 5px solid #8a9bb0;
+            padding: 1rem 1.6rem;
+            margin: 1.6rem 0;
+            font-size: 1.1rem;
+            color: #314157;
+            border-radius: 0 12px 12px 0;
+            font-weight: 380;
+        }
+
+        .pull-quote cite {
+            display: block;
+            margin-top: 0.4rem;
+            font-size: 0.9rem;
+            color: #6b7b8f;
+            font-style: normal;
+        }
+
+        .muted-link {
+            color: #3f5b7a;
+            text-decoration: none;
+            font-weight: 420;
+            border-bottom: 1px dotted #b6c3d1;
+            transition: border 0.2s, color 0.15s;
+        }
+
+        .muted-link:hover {
+            border-bottom: 1px solid #2c4e6e;
+            color: #1b2b3f;
+        }
+
+        .insight-tag {
+            display: inline-block;
+            background: #edf0f5;
+            padding: 0.1rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #3f5068;
+            letter-spacing: 0.02em;
+            border: 1px solid #d7dee6;
+            margin-right: 0.4rem;
+        }
+
+        /* 场景 / 特点列表 —— 更自然的集成 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.8rem 0 0.8rem;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #fafbfc;
+            padding: 1.2rem 1.2rem;
+            border-radius: 16px;
+            border: 1px solid #e4e9ef;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+        }
+
+        .feature-item h3 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+            color: #233043;
+        }
+
+        .feature-item p {
+            font-size: 0.92rem;
+            color: #4e5f72;
+            margin-bottom: 0;
+        }
+
+        /* 提示/faq 摘要 */
+        .faq-note {
+            background: #fafcfe;
+            padding: 1.2rem 1.6rem;
+            border-radius: 16px;
+            border: 1px solid #dee4ec;
+            margin: 1.5rem 0 0.6rem;
+        }
+
+        .faq-note summary {
+            font-weight: 480;
+            cursor: pointer;
+            color: #2f4057;
+            padding: 0.2rem 0;
+        }
+
+        .faq-note p {
+            margin-top: 0.8rem;
+            font-size: 0.96rem;
+            color: #3a4b62;
+        }
+
+        .divider-line {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d0d8e0, transparent);
+            margin: 1.8rem 0;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7b8a9e;
+            margin-top: 0.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .pull-quote {
+                padding: 0.8rem 1rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .card {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 区域 + 叙述 -->
+    <div class="card">
+        <div class="hero-wrapper">
+            <div class="site-label">· 页面索引 ·</div>
+            <h1>开云 · 稳定入口与说明</h1>
+            <div class="byline">—— 一个简明导航，帮助你更清晰地理解这个站点的用途。</div>
+        </div>
+
+        <div class="article-section">
+            <p>
+                不少朋友在搜索或收藏的时候，会遇到同一件事：明明之前去过的页面，过一阵子再找，地址记不清了，或者收藏夹里出现好几个相似的链接。其实，记住一个稳定的地方就好。
+                <a href="https://now-kaaiyun.com" class="muted-link">开云</a> 正是这样一个位置——它不花哨，也不堆砌内容，只是作为一个干净的起点存在。
+            </p>
+            <p>
+                这个页面所做的，就是把那些分散的信息、常用的区域、以及你可能关心的问题，用一种更安静的节奏组织起来。无需每次重新翻找，也不必担心迷失在多层跳转里。简而言之，它更像一份为你准备好的目录，而非一个高音喇叭。
+            </p>
+
+            <div class="pull-quote">
+                “很多时候，我们需要的不是更多的入口，而是一个可靠的、不走样的起点。”
+                <cite>—— 基于实际使用场景的小结</cite>
+            </div>
+
+            <p>
+                从实用角度看，<span class="insight-tag">稳定</span><span class="insight-tag">不绕路</span> 是它最直接的属性。没有复杂的菜单，也没有频繁改动的结构。无论是临时想查点什么，还是需要固定一个日常访问的锚点，这个地址都足够简单。
+            </p>
+        </div>
+    </div>
+
+    <!-- 特点与场景 —— 卡片内的扩展 -->
+    <div class="card">
+        <h2 style="font-weight: 450; font-size: 1.5rem; color: #1b2a3c; margin-bottom: 1rem;">它适合什么样的使用习惯</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>日常登录</h3>
+                <p>如果你需要定期访问某个服务，一个无干扰的直达链接比搜索栏更省力。</p>
+            </div>
+            <div class="feature-item">
+                <h3>信息检索</h3>
+                <p>遇到疑问时，从这里出发，不必担心走错分支或误入临时页面。</p>
+            </div>
+            <div class="feature-item">
+                <h3>收藏/备忘</h3>
+                <p>一条就够了。书签栏里放一个稳定地址，胜过保存七八个不同路径。</p>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.96rem; color: #4d5f74;">
+            以上三种场景并不互相排斥，很多时候它们会重叠。而 <a href="https://now-kaaiyun.com" class="muted-link">开云</a> 恰好处于交汇点——既可以是起点，也可以是常驻点。
+        </p>
+    </div>
+
+    <!-- 更详细的说明 + 引用/提示 -->
+    <div class="card">
+        <h2 style="font-weight: 450; font-size: 1.4rem; color: #1b2a3c; margin-bottom: 1rem;">一点关于稳定的理解</h2>
+        <p>
+            我们在网络上做很多事：阅读、记录、沟通、管理。每一个操作背后，都可能对应着一个网址。但网址会变，维护会停，甚至服务本身也会慢慢迁移。那时候，一个能长期存在、且指向明确的地址就显得很珍贵。
+        </p>
+        <p>
+            所以这个页面在结构上故意保持克制：没有轮播、没有弹窗、没有需要花时间理解的交互。它接近一篇解释性的短文——你阅读它，然后知道接下来该做什么。
+        </p>
+        
+        <div class="faq-note">
+            <details>
+                <summary>❓ 常见疑问摘要 —— 这里是否有你关心的？</summary>
+                <p>
+                    <strong>Q:</strong> 这个页面会频繁更改内容吗？<br>
+                    <strong>A:</strong> 不会。它以稳定为首要目标，即使信息更新，也会保留核心导航与说明。
+                </p>
+                <p style="margin-top: 0.6rem;">
+                    <strong>Q:</strong> 如果我忘记了地址，有什么办法找回？<br>
+                    <strong>A:</strong> 最好的办法就是把 <a href="https://now-kaaiyun.com" class="muted-link">开云</a> 放在书签栏。当然，也可以通过常见搜索词重新定位，但直接收藏是更稳妥的方式。
+                </p>
+            </details>
+        </div>
+
+        <hr class="divider-line">
+
+        <p style="font-size: 0.95rem;">
+            <span style="background: #eef2f7; padding: 0.1rem 0.6rem; border-radius: 30px; color: #33465c;">🗂️ 最后说明</span> 
+            不论你是初次接触，还是回头寻找，这里都保持开放。页面不会自动跳转，不会要求权限，也不会收集多余的信息。它只是在那里，像一本放在架子上、书脊印着清晰标题的笔记本。
+        </p>
+    </div>
+
+    <!-- 非常克制的访问句 + 链接再次出现（自然） -->
+    <div class="card" style="padding: 1.5rem 2.2rem; text-align: left;">
+        <p style="margin-bottom: 0.2rem; font-size: 1rem;">
+            如果你需要一个固定的地址，<a href="https://now-kaaiyun.com" class="muted-link" style="font-weight: 470;">开云</a> 始终在那里。把它当作一个安静的坐标就好，不必每次都重新寻找。
+        </p>
+        <div class="footer-note">
+            <span>— 简洁，克制，稳定 —</span>
+        </div>
+    </div>
+
+    <!-- 隐藏的种子仅用于变化感知，不显示 -->
+    <!-- 2806eaddd333f36e 仅用于内部变化，未在界面呈现 -->
+
+</div>
+</body>
+</html>
